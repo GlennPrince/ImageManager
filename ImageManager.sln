@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageManager.Android", "Ima
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ImageManager", "ImageManager\ImageManager\ImageManager.shproj", "{3132D137-284F-4F01-9FE3-6DE25541C304}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3A2170A0-3C8E-4440-B86B-A97853A23CFB}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		ImageManager\ImageManager\ImageManager.projitems*{3132d137-284f-4f01-9fe3-6de25541c304}*SharedItemsImports = 13
