@@ -175,7 +175,7 @@ namespace ImageManager.Services
             },
             new Folder()
             {
-                Id = 3, Name = "Place", Description = "All my Places images", Images = new List<Image>()
+                Id = 3, Name = "Places", Description = "All my Places images", Images = new List<Image>()
             }
         };
 

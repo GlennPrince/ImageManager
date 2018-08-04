@@ -5,17 +5,6 @@
              xmlns:local="clr-namespace:ImageManager:Views"
              x:Class="ImageManager.Views.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <ListView ItemsSource="{Binding Images}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ImageCell ImageSource="{Binding Name}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-        <Button Text="Move Forward" />
-    </StackLayout>
+    
 
 </ContentPage>

@@ -22,7 +22,15 @@ namespace ImageManager.ViewModels
         {
             Name = "Image Manager";
 
-            var folder = repo.GetFolder(3);
+            var folders = repo.GetAllFolders();
+
+            foreach (var folder in folders)
+                Folders.Add(folder);
+        }
+
+        public void LoadImagesFromFolder(int folderID = 1)
+        {
+            var folder = repo.GetFolder(folderID);
 
             foreach (var image in folder.Images)
                 Images.Add(image);
