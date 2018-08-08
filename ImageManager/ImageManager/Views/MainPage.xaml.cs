@@ -15,14 +15,40 @@ namespace ImageManager.Views
             viewModel = new MainPageViewModel();
             BindingContext = viewModel;
 
-            var listView = new ListView();
-            listView.ItemsSource = viewModel.Folders;
-            listView.ItemTemplate = new DataTemplate(typeof(ImageCell));
-            listView.ItemTemplate.SetBinding(ImageCell.TextProperty, "Name");
-            var folderImage = new Image() { Source = "folder.jpg" };
-            listView.ItemTemplate.SetValue(ImageCell.ImageSourceProperty, folderImage.Source);
+            var listView = new ListView()
+            {
+                ItemsSource = viewModel.Folders,
+                RowHeight = 100,
+
+                ItemTemplate = new DataTemplate(() =>
+                {
+                    // Create views with bindings for displaying each property.
+                    Label nameLabel = new Label();
+                    nameLabel.SetBinding(Label.TextProperty, "Name");
+                    nameLabel.TextColor = new Color(0, 0, 0);
+                    nameLabel.VerticalOptions = new LayoutOptions(LayoutAlignment.Center, true);
+
+                    Image folderImage = new Image() { Source = "folder.jpg", HeightRequest = 96, Aspect = Aspect.AspectFit };
+
+                    // Return an assembled ViewCell.
+                    return new ViewCell
+                    {
+                        View = new StackLayout
+                        {
+                            Orientation = StackOrientation.Horizontal,
+                            Children =
+                            {
+                                folderImage,
+                                nameLabel
+                            }
+                        }
+                    };
+                }),
+            };
 
             listView.ItemTapped += tapFolder_Tapped;
+
+            Title = "Image Manager";
 
             var scrollView = new ScrollView();
             scrollView.Content = listView;
@@ -30,6 +56,7 @@ namespace ImageManager.Views
             Content = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
+                Padding = new Thickness(50,10,10,50),
                 Children =
                 {
                     scrollView

@@ -8,10 +8,12 @@ namespace ImageManager.Views
 	{
         MainPageViewModel viewModel;
 
-        public ImageView(ImageSource imageSource)
+        public ImageView(ImageSource imageSource, string imageName)
         {
             viewModel = new MainPageViewModel();
             BindingContext = viewModel;
+
+            Title = imageName;
 
             var scrollView = new ScrollView();
             scrollView.Content = new Image() { Source = imageSource, Aspect = Aspect.AspectFill };

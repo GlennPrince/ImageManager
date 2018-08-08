@@ -4,7 +4,4 @@
              xmlns:viewmodels="clr-namespace:ImageManager.ViewModels"
              xmlns:local="clr-namespace:ImageManager:Views"
              x:Class="ImageManager.Views.MainPage">
-
-    
-
 </ContentPage>

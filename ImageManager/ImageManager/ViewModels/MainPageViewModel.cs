@@ -32,6 +32,8 @@ namespace ImageManager.ViewModels
         {
             var folder = repo.GetFolder(folderID);
 
+            Name = folder.Name;
+
             foreach (var image in folder.Images)
                 Images.Add(image);
         }
